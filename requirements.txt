@@ -2,5 +2,8 @@ numpy
 pandas
 matplotlib
 plotly
-streamlit
+# streamlit
+-e ../streamlit/lib/
 scikit-learn
+
+pytest
