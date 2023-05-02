@@ -6,6 +6,9 @@ _fix_matplotlib_crash()
 
 
 def get_sorted_colors(script_result):
+    """
+    Comparing the selected colors is a good heuristic for things changing correctly, so we want it to be easy to get the colors from a script run.
+    """
     colors = {
         k: script_result.session_state[k]
         for k in script_result.session_state
@@ -19,30 +22,41 @@ def get_sorted_colors(script_result):
 
 class AppTest(InteractiveScriptTests):
     def test_smoke(self):
+        """Basic smoke test"""
         script = self.script_from_filename("app.py")
         sr = script.run()
+        # Supported elements are primarily exposed as properties on the script
+        # results object, which returns a sequence of that element.
         assert not sr.exception
 
     def test_palette_size(self):
         script = self.script_from_filename("app.py")
         sr = script.run()
 
+        # It is easier to find the widget we want by first selecting the
+        # sidebar, then querying within that.
         sr2 = sr.sidebar.number_input[0].set_value(2).run()
         assert len(sr2.color_picker) == 2
 
+        # For widgets that don't yet have high level interaction methods, we
+        # can fall back to the primitive `set_value`.
         sr3 = sr2.sidebar.number_input[0].set_value(15).run()
         assert len(sr3.color_picker) == 15
 
     def test_selected_colors(self):
+        """Changing the source image should change the colors it picks"""
         script = self.script_from_filename("app.py")
         sr = script.run()
         colors = get_sorted_colors(sr)
 
+        # Elements that don't have explicit implementations yet, like `tab`,
+        # are still parsed and can be queried using `.get`.
         sr2 = sr.get("tab")[0].selectbox[0].select_index(1).run()
         colors2 = get_sorted_colors(sr2)
         assert colors != colors2
 
     def test_load_url(self):
+        """We can load an image from a URL"""
         script = self.script_from_filename("app.py")
         sr = script.run()
         colors = get_sorted_colors(sr)
@@ -61,6 +75,7 @@ class AppTest(InteractiveScriptTests):
         assert colors != colors2
 
     def test_seed(self):
+        """Changing the seed will probably change the colors selected"""
         script = self.script_from_filename("app.py")
         sr = script.run()
         colors = get_sorted_colors(sr)
@@ -74,6 +89,7 @@ class AppTest(InteractiveScriptTests):
         assert colors != colors3
 
     def test_model(self):
+        """Changing the model will probably change the selected colors."""
         script = self.script_from_filename("app.py")
         sr = script.run()
         colors_kmeans = get_sorted_colors(sr)
