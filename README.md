@@ -70,4 +70,11 @@ pip install -r requirements.txt
 pytest
 ```
 
+## Using it with CI
+
+The testing framework just uses pytest, so any CI tools that work with python should just work. You can see
+a Github Action workflow in this repo that runs the tests using
+[GitHub's python starter workflow](https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml)
+with zero modifications, and it works great.
+
 ## 🎈 Let us know what you think! 🎈
