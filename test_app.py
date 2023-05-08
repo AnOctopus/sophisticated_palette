@@ -38,10 +38,15 @@ class AppTest(InteractiveScriptTests):
         sr2 = sr.sidebar.number_input[0].set_value(2).run()
         assert len(sr2.color_picker) == 2
 
+        # You can also query a widget by key to modify it or check the value
+        assert sr2.get_widget("sample_size").value == 500
+        sr2.get_widget("sample_size").set_value(450)
+
         # For widgets that don't yet have high level interaction methods, we
         # can fall back to the primitive `set_value`.
         sr3 = sr2.sidebar.number_input[0].set_value(15).run()
         assert len(sr3.color_picker) == 15
+        assert sr2.get_widget("sample_size").value == 450
 
     def test_selected_colors(self):
         """Changing the source image should change the colors it picks"""

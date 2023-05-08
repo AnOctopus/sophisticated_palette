@@ -32,8 +32,8 @@ click = st.sidebar.button("Find Palette", disabled=bool(toggle))
 
 st.sidebar.markdown("---")
 st.sidebar.header("Settings")
-palette_size = int(st.sidebar.number_input("palette size", min_value=1, max_value=20, value=5, step=1, help="Number of colors to infer from the image."))
-sample_size = int(st.sidebar.number_input("sample size", min_value=5, max_value=3000, value=500, step=500, help="Number of sample pixels to pick from the image."))
+palette_size = int(st.sidebar.number_input("palette size", min_value=1, max_value=20, value=5, step=1, help="Number of colors to infer from the image.", key="palette_size"))
+sample_size = int(st.sidebar.number_input("sample size", min_value=5, max_value=3000, value=500, step=500, help="Number of sample pixels to pick from the image.", key="sample_size"))
 
 # Image Enhancement
 enhancement_categories = enhancement_range.keys()
