@@ -80,6 +80,9 @@ a Github Action workflow in this repo that runs the tests using
 [GitHub's python starter workflow](https://github.com/actions/starter-workflows/blob/main/ci/python-app.yml)
 with zero modifications, and it works great.
 
+You can view the [Github Actions configuration for this repository](https://github.com/AnOctopus/st-testing-demo/blob/main/.github/workflows/python-app.yml#L37-L39),
+and [recent CI runs including the test execution](https://github.com/AnOctopus/st-testing-demo/actions/workflows/python-app.yml).
+
 ## 🎈 Let us know what you think! 🎈
 
 - TODO: Add links to feedback places
