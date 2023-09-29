@@ -1,5 +1,7 @@
 # Streamlit App Testing Framework (Preview) Demo
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sfc-gh-jcarroll/st-testing-demo/tree/update-api?quickstart=1)
+
 This repo demonstrates the capabilities and usage of Streamlit's new testing framework. The framework enables
 developers to:
 
