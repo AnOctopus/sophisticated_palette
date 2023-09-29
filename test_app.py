@@ -29,6 +29,7 @@ class StreamlitTestSuite(unittest.TestCase):
         assert not at.exception
 
     def test_palette_size(self):
+        """Changing the palette size will update how many color pickers are shown"""
         at = AppTest.from_file("app.py", default_timeout=10).run()
         # TODO: Fix sidebar
         # It is easier to find the widget we want by first selecting the
