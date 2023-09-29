@@ -59,7 +59,7 @@ def get_df_rgb(img, sample_size):
 def get_palette(df_rgb, model_name, palette_size, sort_func="random"):
     """cluster pixels together and return a sorted color palette."""
     params = {n_cluster_arg[model_name]: palette_size}
-    model = model_dict[model_name](**params)
+    model = model_dict[model_name](**params, n_init=10)
 
     clusters = model.fit_predict(df_rgb)
         
