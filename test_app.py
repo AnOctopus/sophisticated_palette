@@ -56,7 +56,7 @@ class StreamlitTestSuite(unittest.TestCase):
 
         # Elements that don't have explicit implementations yet, like `tab`,
         # are still parsed and can be queried using `.get`.
-        at.get("tab")[0].selectbox[0].select_index(1).run()
+        at.get("tab")[0].selectbox[0].select("Pretty Night (Leonid Afremov)").run()
         colors2 = get_sorted_colors(at)
         assert colors != colors2
 
