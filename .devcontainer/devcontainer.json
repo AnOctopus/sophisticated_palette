@@ -3,13 +3,6 @@
 {
     "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
     "customizations": {
-        "codespaces": {
-          "openFiles": [
-            "CODESPACES_WELCOME.md",
-            "app.py",
-            "test_app.py"
-          ]
-        },
         "vscode": {
           "settings": {
             "workbench.editorAssociations": {
@@ -20,15 +13,23 @@
             "ms-python.python",
             "ms-python.vscode-pylance"
           ]
+        },
+        "codespaces": {
+            "openFiles": [
+              "CODESPACES_WELCOME.md",
+              "app.py",
+              "test_app.py"
+            ]
         }
       },
     "forwardPorts": [
         8501
     ],
-    "postCreateCommand": "pip3 install --user -r requirements.txt",
-    "postAttachCommand": {
-        "server": "streamlit run app.py > /dev/null 2>&1 &"
+    "postCreateCommand": {
+        "install": "pip3 install --user -r requirements.txt",
+        "preview": "code CODESPACES_WELCOME.md"
     },
+    "postAttachCommand": "streamlit run app.py > /dev/null 2>&1 &",
     "portsAttributes": {
         "8501": {
             "label": "Application",

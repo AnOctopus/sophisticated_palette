@@ -1,6 +1,6 @@
 # Streamlit App Testing Framework (Preview) Demo
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/sfc-gh-jcarroll/st-testing-demo/tree/update-api?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/AnOctopus/st-testing-demo?quickstart=1)
 
 This repo demonstrates the capabilities and usage of Streamlit's new testing framework. The framework enables
 developers to:
@@ -60,7 +60,7 @@ See `test_app.py` for the tests and some further explanation.
 
 ## Run it using GitHub Codespaces
 
-TODO: Add info on codespaces
+You can get started very quickly by [launching this repo in GitHub Codespaces](https://codespaces.new/AnOctopus/st-testing-demo?quickstart=1). The app and [Codespaces walkthrough](./CODESPACES_WELCOME.md) should load automatically after a few seconds.
 
 ## Run it locally
 

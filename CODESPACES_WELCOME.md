@@ -6,14 +6,11 @@ below to get a quick overview of the new framework.
 
 ## Instructions
 
-1. A few seconds after opening the codespace, you should see the Sophisticated Palette app open
-  in a tab to the right of these instructions. You can click around the app to get familiar with
-  the functionality.
+1. A few seconds after opening the codespace, you should see the Sophisticated Palette app open in a tab to the right of these instructions.
+1. Click around the app to get familiar with the functionality.
 1. For a closer look, view the app source code in `app.py`. It should be available in a tab next to this one.
-1. This app has tests implemented in `test_app.py`. You can review the tests to understand how the testing
-  framework works, and which capabilities we can test with this app.
-1. Finally, you should see a terminal open below these instructions. Type `pytest` and hit enter to execute
-  the tests. They should complete in a few seconds! For more details, you can run `pytest -vv`.
+1. This app has tests implemented in `test_app.py`. Review the tests to see examples of the testing framework in action.
+1. Finally, you should see a terminal open below these instructions. Click into the terminal and enter `pytest -vv` to execute the tests.
 1. Try editing the tests or editing the app to see failures, additional previews, or you can add your own tests.
 
 ## Next steps
