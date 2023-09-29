@@ -25,8 +25,8 @@
     "forwardPorts": [
         8501
     ],
-    "postCreateCommand": "code CODESPACES_WELCOME.md && pip3 install --user -r requirements.txt",
-    "postAttachCommand": "streamlit run app.py > /dev/null 2>&1 &",
+    "postCreateCommand": "pip3 install --user -r requirements.txt",
+    "postAttachCommand": "code CODESPACES_WELCOME.md; streamlit run app.py > /dev/null 2>&1 &",
     "portsAttributes": {
         "8501": {
             "label": "Application",
