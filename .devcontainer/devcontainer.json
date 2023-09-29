@@ -16,7 +16,7 @@
         },
         "codespaces": {
             "openFiles": [
-              "CODESPACES_WELCOME.md",
+              "README.md",
               "app.py",
               "test_app.py"
             ]
@@ -28,8 +28,10 @@
     "postCreateCommand": {
         "install": "pip3 install --user -r requirements.txt",
         "preview": "code CODESPACES_WELCOME.md"
-    },
-    "postAttachCommand": "streamlit run app.py > /dev/null 2>&1 &",
+      },
+      "postAttachCommand": {
+        "server": "streamlit run app.py > /dev/null 2>&1 &"
+      },
     "portsAttributes": {
         "8501": {
             "label": "Application",
