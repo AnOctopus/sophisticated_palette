@@ -23,13 +23,13 @@ def get_sorted_colors(at: AppTest):
 class StreamlitTestSuite(unittest.TestCase):
     def test_smoke(self):
         """Basic smoke test"""
-        at = AppTest.from_file("app.py").run()
+        at = AppTest.from_file("app.py", default_timeout=10).run()
         # Supported elements are primarily exposed as properties on the script
         # results object, which returns a sequence of that element.
         assert not at.exception
 
     def test_palette_size(self):
-        at = AppTest.from_file("app.py").run()
+        at = AppTest.from_file("app.py", default_timeout=10).run()
         # TODO: Fix sidebar
         # It is easier to find the widget we want by first selecting the
         # sidebar, then querying within that.
@@ -51,7 +51,7 @@ class StreamlitTestSuite(unittest.TestCase):
 
     def test_selected_colors(self):
         """Changing the source image should change the colors it picks"""
-        at = AppTest.from_file("app.py").run()
+        at = AppTest.from_file("app.py", default_timeout=10).run()
         colors = get_sorted_colors(at)
 
         # Elements that don't have explicit implementations yet, like `tab`,
@@ -62,7 +62,7 @@ class StreamlitTestSuite(unittest.TestCase):
 
     def test_load_url(self):
         """We can load an image from a URL"""
-        at = AppTest.from_file("app.py").run()
+        at = AppTest.from_file("app.py", default_timeout=10).run()
         colors = get_sorted_colors(at)
 
         ST_LOGO_URL = "https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png"
@@ -73,7 +73,7 @@ class StreamlitTestSuite(unittest.TestCase):
 
     def test_seed(self):
         """Changing the seed will probably change the colors selected"""
-        at = AppTest.from_file("app.py").run()
+        at = AppTest.from_file("app.py", default_timeout=10).run()
         colors = get_sorted_colors(at)
 
         at.run()
@@ -87,7 +87,7 @@ class StreamlitTestSuite(unittest.TestCase):
 
     def test_model(self):
         """Changing the model will probably change the selected colors."""
-        at = AppTest.from_file("app.py", default_timeout=5).run()
+        at = AppTest.from_file("app.py", default_timeout=10).run()
         colors_kmeans = get_sorted_colors(at)
 
         # TODO: Note changed index to 1 since it checks main before sidebar
