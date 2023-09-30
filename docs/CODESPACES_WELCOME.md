@@ -1,6 +1,6 @@
-# Streamlit App Testing Framework
+# 🎈 Streamlit App Testing Framework 🎈
 
-**Welcome to the Streamlit app testing framework quickstart!** These instructions are optimized
+👋 **Welcome to the Streamlit app testing framework quickstart!** These instructions are optimized
 for users who have opened this repo in Github Codespaces as a quickstart view. Follow the instructions
 below to get a quick overview of the new framework.
 
