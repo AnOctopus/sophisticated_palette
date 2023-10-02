@@ -54,7 +54,7 @@ class TestSuite(unittest.TestCase):
         assert len(at.color_picker) == 2
 ```
 
-Read the fuller documentation on the preview [here](#TODO-add-link).
+Read the fuller documentation on the preview [here](https://docs.google.com/document/d/1KTMUfUiLyM7vviug8FjyFIfm0oJB81s3RmigHrd2pbM/edit).
 
 See `test_app.py` for the tests and some further explanation.
 
@@ -87,4 +87,5 @@ and [recent CI runs including the test execution](https://github.com/AnOctopus/s
 
 ## 🎈 Let us know what you think! 🎈
 
-- TODO: Add links to feedback places
+- Snowflake internal feedback: Leave comments in `#feat-streamlit-testing` on Slack
+- External feedback: *link to be added*
