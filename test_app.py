@@ -31,11 +31,10 @@ class StreamlitTestSuite(unittest.TestCase):
     def test_palette_size(self):
         """Changing the palette size will update how many color pickers are shown"""
         at = AppTest.from_file("app.py", default_timeout=10).run()
-        # TODO: Fix sidebar
+
         # It is easier to find the widget we want by first selecting the
         # sidebar, then querying within that.
-        # at.sidebar.number_input[0].set_value(2).run()
-        at.number_input[0].set_value(2).run()
+        at.sidebar.number_input[0].set_value(2).run()
         
         assert len(at.color_picker) == 2
 
@@ -45,8 +44,7 @@ class StreamlitTestSuite(unittest.TestCase):
 
         # For widgets that don't yet have high level interaction methods, we
         # can fall back to the primitive `set_value`.
-        #at.sidebar.number_input[0].set_value(15).run()
-        at.number_input[0].set_value(15).run()
+        at.sidebar.number_input[0].set_value(15).run()
         assert len(at.color_picker) == 15
         assert at.number_input(key="sample_size").value == 450
 
@@ -81,8 +79,7 @@ class StreamlitTestSuite(unittest.TestCase):
         colors2 = get_sorted_colors(at)
         assert colors == colors2
 
-        #at.sidebar.number_input[2].set_value(0).run()
-        at.number_input[2].set_value(0).run()
+        at.sidebar.number_input[2].set_value(0).run()
         colors3 = get_sorted_colors(at)
         assert colors != colors3
 
@@ -91,19 +88,15 @@ class StreamlitTestSuite(unittest.TestCase):
         at = AppTest.from_file("app.py", default_timeout=10).run()
         colors_kmeans = get_sorted_colors(at)
 
-        # TODO: Note changed index to 1 since it checks main before sidebar
-        #at.sidebar.selectbox[0].select_index(1).run()
-        at.selectbox[1].select_index(1).run()
+        at.sidebar.selectbox[0].select_index(1).run()
         colors_bisect = get_sorted_colors(at)
         assert colors_kmeans != colors_bisect
 
         # You can also select a value explicitly
-        #at.sidebar.selectbox[0].select_index(2).run()
-        at.selectbox[1].select("GaussianMixture").run()
+        at.sidebar.selectbox[0].select("GaussianMixture").run()
         colors_gaussian = get_sorted_colors(at)
         assert colors_bisect != colors_gaussian
 
-        #at.sidebar.selectbox[0].select_index(3).run()
-        at.selectbox[1].select_index(3).run()
+        at.sidebar.selectbox[0].select_index(3).run()
         colors_mini = get_sorted_colors(at)
         assert colors_gaussian != colors_mini

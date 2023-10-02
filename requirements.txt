@@ -2,7 +2,7 @@ numpy
 pandas
 matplotlib
 plotly
-./streamlit-1.27.0-py2.py3-none-any.whl
+./streamlit-1.27.1-py2.py3-none-any.whl
 scikit-learn
 
 pytest
