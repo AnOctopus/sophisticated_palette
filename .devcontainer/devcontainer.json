@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/python-3
+{
+    "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+    "customizations": {
+        "vscode": {
+          "settings": {
+            "workbench.editorAssociations": {
+                "*.md": "vscode.markdown.preview.editor"
+            }
+          },
+          "extensions": [
+            "ms-python.python",
+            "ms-python.vscode-pylance"
+          ]
+        },
+        "codespaces": {
+            "openFiles": [
+              "docs/LOADING_PAGE.md",
+              "app.py",
+              "test_app.py"
+            ]
+        }
+      },
+    "forwardPorts": [
+        8501
+    ],
+    "postCreateCommand": "pip3 install --user -r requirements.txt",
+    "postAttachCommand": "streamlit run app.py > /dev/null 2>&1 &",
+    "portsAttributes": {
+        "8501": {
+            "label": "Application",
+            "onAutoForward": "openPreview"
+        }
+    },
+    "remoteUser": "vscode",
+    "features": {}
+}
