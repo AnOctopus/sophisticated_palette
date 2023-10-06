@@ -24,6 +24,5 @@ def test_incorrect_password():
     # Simulate a user inputting an incorrect password
     at.text_input("password").input("bazbat")
     at.run()
-    print(at)
     # Should see an error since the entered password didn't match secret
     assert at.markdown[0].value == "Sorry, the passwords didn't match"
