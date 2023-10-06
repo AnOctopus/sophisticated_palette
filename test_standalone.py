@@ -1,4 +1,3 @@
-
 from streamlit.testing.v1 import AppTest
 
 # Sample app to be tested
