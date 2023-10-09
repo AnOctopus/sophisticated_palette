@@ -1,10 +1,5 @@
 from streamlit.testing.v1 import AppTest
 
-# Fix the issue with tkinter, until this is called for you by the framework
-# Should be fixed in streamlit-nightly>=1.27.3.dev20231006
-from streamlit.web.bootstrap import _fix_matplotlib_crash
-_fix_matplotlib_crash()
-
 def get_sorted_colors(at: AppTest):
     """
     Comparing the selected colors is a good heuristic for things changing correctly, so we want it to be easy to get the colors from a script run.
