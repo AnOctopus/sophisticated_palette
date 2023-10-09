@@ -89,4 +89,3 @@ and [recent CI runs including the test execution](https://github.com/AnOctopus/s
 
 - 👉 [Add your feedback in the forum](https://discuss.streamlit.io/t/feedback-wanted-for-streamlit-app-testing/52861)
 - ❄️ Snowflake internal feedback: Leave comments in `#feat-streamlit-app-testing` on Slack
-
