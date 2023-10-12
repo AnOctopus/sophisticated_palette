@@ -48,7 +48,7 @@ def test_selected_colors():
 
     # Elements that don't have explicit implementations yet, like `tab`,
     # are still parsed and can be queried using `.get`.
-    at.get("tab")[0].selectbox[0].select("Pretty Night (Leonid Afremov)").run()
+    at.tabs[0].selectbox[0].select("Pretty Night (Leonid Afremov)").run()
     colors2 = get_sorted_colors(at)
     assert colors != colors2
 
@@ -58,7 +58,7 @@ def test_load_url():
     colors = get_sorted_colors(at)
 
     ST_LOGO_URL = "https://user-images.githubusercontent.com/7164864/217935870-c0bc60a3-6fc0-4047-b011-7b4c59488c91.png"
-    at.get("tab")[2].text_input[0].input(ST_LOGO_URL).run()
+    at.tabs[2].text_input[0].input(ST_LOGO_URL).run()
     assert not at.exception
     colors2 = get_sorted_colors(at)
     assert colors != colors2
