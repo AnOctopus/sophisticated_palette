@@ -4,15 +4,7 @@ def get_sorted_colors(at: AppTest):
     """
     Comparing the selected colors is a good heuristic for things changing correctly, so we want it to be easy to get the colors from a script run.
     """
-    colors = {
-        k: at.session_state[k]
-        for k in at.session_state
-        if k.startswith("col_")
-    }
-    sorted_colors = {
-        k: colors[k] for k in sorted(colors, key=lambda k: int(k.split("_")[-1]))
-    }
-    return sorted_colors
+    return [cp.value for cp in at.color_picker]
 
 def test_smoke():
     """Basic smoke test"""
