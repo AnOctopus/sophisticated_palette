@@ -15,7 +15,7 @@ def my_app():
 def test_incorrect_password():
     at = AppTest.from_function(my_app)
     # Configure secrets, session_state, query params directly
-    at.secrets = {"PASSWORD": "Foobar"}
+    at.secrets["PASSWORD"] = "Foobar"
     # Run once to display the initial app page
     at.run()
     # Inspect and manipulate elements on the page
