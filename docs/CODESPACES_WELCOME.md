@@ -28,5 +28,4 @@ pytest
 Hopefully this is a helpful overview of the feature! A few resources to explore next:
 
 - View the [full README](./README.md) for this repo, including local and CI setup
-- [Detailed documentation](https://docs.google.com/document/d/1Qscb-Ux8hEPo9hdoIjEw666wmzXO_u0JmpYo-4X6kSw/preview) - preview install instructions and API reference
-- [Add feedback here](https://discuss.streamlit.io/t/feedback-wanted-for-streamlit-app-testing/52861)
+- View the [App testing docs](https://docs.streamlit.io/library/api-reference/app-testing)

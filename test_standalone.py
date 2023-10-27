@@ -24,3 +24,7 @@ def test_incorrect_password():
     at.text_input("password").input("bazbat").run()
     # Should see an error since the entered password didn't match secret
     assert at.warning[0].value == "Sorry, the passwords didn't match"
+
+# Enable running the app to view behavior
+if __name__ == "__main__":
+    my_app()

@@ -2,7 +2,7 @@ numpy
 pandas
 matplotlib
 plotly
-streamlit-nightly>=1.27.3.dev20231017
+streamlit>=1.28
 scikit-learn
 
 pytest
