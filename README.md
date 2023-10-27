@@ -1,26 +1,21 @@
-# Streamlit App Testing Framework (Preview) Demo
+# Streamlit App Testing Demo
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/AnOctopus/st-testing-demo?quickstart=1)
 
-This repo demonstrates the capabilities and usage of Streamlit's new testing framework. The framework enables
-developers to:
+This repo demonstrates the capabilities and usage of Streamlit's new `AppTest` class, **released in Streamlit 1.28**.
+App testing enables developers to:
 
 - Run your app as a headless script
 - Inspect and make assertions about the output content via the DOM in object-attribute style
 - Programmatically modify the input values on various widgets, re-run the app, and inspect the output
 
-The testing framework works well with [unittest.TestCase](https://docs.python.org/3/library/unittest.html#test-cases)
+`AppTest` works well with [unittest.TestCase](https://docs.python.org/3/library/unittest.html#test-cases)
 and [pytest](https://docs.pytest.org/en/7.3.x/) or similar tools. The testing framework ships with
 core Streamlit (and in fact is used heavily in Streamlit's internal unit testing) -
 the functionality shown here can be installed from the provided whl.
 
 The example is built on the existing [sophisticated_palette app](https://github.com/syasini/sophisticated_palette)
 originally built by @syasini and hosted on Streamlit Community Cloud: https://sophisticated-palette.streamlit.app/
-
-**⚠️ Important Note ⚠️: The testing framework API is not currently documented nor guaranteed to be stable.**
-This repo is shared for evaluation and gathering feedback about the feature. We have been using it
-internally and expect to stabilize and document the API in the coming months, HOWEVER we discourage
-any large scale adoption or production usage that would be painful to adapt to API changes in future versions.
 
 ## A simple example
 
@@ -54,7 +49,7 @@ class TestSuite(unittest.TestCase):
         assert len(at.color_picker) == 2
 ```
 
-Read the fuller documentation on the preview [here](https://docs.google.com/document/d/1Qscb-Ux8hEPo9hdoIjEw666wmzXO_u0JmpYo-4X6kSw/preview).
+Read the full documentation [here](https://docs.streamlit.io/library/api-reference/app-testing).
 
 See `test_app.py` for the tests and some further explanation.
 
@@ -88,4 +83,3 @@ and [recent CI runs including the test execution](https://github.com/AnOctopus/s
 ## 🎈 Let us know what you think! 🎈
 
 - 👉 [Add your feedback in the forum](https://discuss.streamlit.io/t/feedback-wanted-for-streamlit-app-testing/52861)
-- ❄️ Snowflake internal feedback: Leave comments in `#feat-streamlit-app-testing` on Slack
